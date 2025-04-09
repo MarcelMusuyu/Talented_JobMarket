@@ -1,0 +1,172 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sleep Outside | Checkout</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/checkout.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="divider" id="main-header">
+      
+    </header>
+
+    <main class="divider">
+      <section class="products">
+        <h2>Review & Place your Order</h2>
+        <div class="card-body order-summary">
+                <form method="POST" name="checkout" >
+                  <input type="hidden" name="orderDate" id="orderDate">
+                    <div class="rows form-row">
+                          <h4 class="card-title">Personal Information</h4>
+                          <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="firstname">First Name<span class="text-danger">*</span></label>
+                              <input
+                              id="firstname" required 
+                                type="text"
+                                class="form-control"
+                                name="fname"
+                                placeholder="John"
+                                value=""
+                              />
+                            </div>
+
+                            <div class="form-group">
+                              <label for="lastname">Last Name<span class="text-danger">*</span></label>
+                              <input id="lastname" name="lname" placeholder="Doe" required type="text" class="form-control" value="" />
+                            </div>
+                          </div>
+                        
+                          
+                        <h4 class="card-title"> Billing and Shipping address </h4>
+                          <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="street">Street Address<span class="text-danger">*</span></label>
+
+                              <input 
+                                type="text" 
+                                id="street" 
+                                name="street" 
+                                placeholder="1234 Main St" 
+                                class="form-control"
+                                pattern="[a-zA-Z\-, ]{5,}" 
+                                title="The Street Name must contain at least 7 characters and only allow letters, hyphens, and spaces." 
+                                required>
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="city">City<span class="text-danger">*</span></label>
+                              <input id="city" required
+                                type="text"
+                                placeholder="Salt Lake City"
+                                class="form-control"
+                                name="city"
+                              />
+                            </div>
+
+                            <div class="form-group">
+                              <label for="state">State <span class="text-danger">*</span></label>
+                              <input
+                                type="text" id="state" required
+                                class="form-control"
+                                placeholder="Utah" 
+                                name="state" 
+                                value=""
+                              />
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="zip">Zip Code <span class="text-danger">*</span></label>
+                              <input
+                                type="text" id="zip" required
+                                class="form-control"
+                                placeholder="84101" 
+                                name="zip" 
+                                id="zip"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                          
+                          <h4 class="card-title">Payment Method</h4>
+                            <div class="col-12 col-md-6 card-label">
+                                <div class="form-group ">
+                                    <label for="card_number">Card Number</label>
+                                    <input class="form-control" name="cardNumber" id="card_number" value="1234123412341234" type="text">
+                                </div>
+                                <div class="form-group ">
+                                  <label for="expiry_year">Expiry Date</label>
+                                  <input class="form-control" name="expiration" type="text" id="expiry_year" placeholder="MM/YY" type="text">
+                                </div>
+
+                                <div class="form-group ">
+                                  <label for="card_name">Security Code</label>
+                                  <input class="form-control"
+                                  pattern="[0-9]{3}"
+                                    title="The Security Code must contain 3 digits."
+                                    required
+
+                                  value="123"
+                                  id="card_name" name="code" type="text">
+                                </div>
+                          </div>
+                          
+                              <input type="hidden" id="loadTime" name="loadTime">
+                         
+                          <div class="submit-section">
+                              <button type="submit" id="checkoutSubmit" class="btn btn-primary submit-btn">
+                                Save Changes
+                              </button>
+                          </div>
+                    </div>
+
+                </form>
+
+                <div class="card booking-card">
+                      <div class="card-header">
+                          <h4 class="card-title"> Order Summary</h4>
+                      </div>
+                      <div class="card-body">
+
+                        <div class="booking-user-info">Subtotal
+
+                            <div class="checkout-summary">
+                                <div class="booking-item-wrap">
+                                  <ul class="booking-date">
+                                    <li >Date <span id="date-order"></span></li>
+                                    <li >Time <span class="time"></span></li>
+                                  </ul>
+                                  <ul class="booking-fee">
+                                    
+                                     <li >Number of Items <span id="num-items"></span></li>
+                                      <li >Subtotal <span id="cartTotal"></span></li>
+                                      <li>Tax <span id="tax">  </span></li>
+                                      <li>Shipping Estimate <span id="shipping"> </span></li>
+                                  </ul>
+                                  <div class="booking-total">
+                                  <ul class="booking-total-list">
+                                      <li>
+                                      <span>Order Total</span>
+                                      <span id="orderTotal" class="total-cost"></span>
+                                      </li>
+                                  </ul>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+
+      </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+  </body>
+</html>
