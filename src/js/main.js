@@ -1,11 +1,11 @@
-import ProductData from "./ProductData.mjs";
+import ProductData from "./ExternalServices.mjs";
 import ProductList from "./ProductList.mjs";
 import Alert from "./AlertMessage.mjs";
 
 import {  loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
-const dataSource = new ProductData("tents");
+const dataSource = new ProductData();
 
 const info = new Alert("../json/alert.json", "main");
 

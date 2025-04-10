@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Talented JobMarket</title>
+
+      <link type="image/x-icon" href="/assets/img/favicon.ico" rel="icon" />
+
+      <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css" />
+      <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker.css" />
+
+      <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css" />
+
+      <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
+
+      <link rel="stylesheet" href="/assets/assets_admin/css/style.css" />
+    <script src="/js/main.js" type="module"></script>
+  
+  </head>
+  <body>
+    
+      
+   
+    <main class="divider">
+      <body>
+
+    <div class="main-wrapper login-body">
+        <div class="login-wrapper">
+            <div class="container">
+                <div class="loginbox">
+                    <div class="login-left">
+                         <img src="/images/logos/logo.jpg"  class="img-fluid" alt="Logo" />
+                    </div>
+                    <div class="login-right">
+                        <div class="login-right-wrap">
+                            <h1>Login</h1>
+                            <p class="account-subtitle">Access to our dashboard</p>
+                            
+                            <form method="post" action=""
+                            enctype="multipart/form-data">
+
+                         
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Firstname</label>
+                                        <input id="first-name" type="text" required class="form-control"
+                                            name="first_name" value="" placeholder="Firstname" autofocus="" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Lastname</label>
+                                        <input id="last-name" type="text" placeholder="Lastname" required class="form-control" name="last_name"
+                                            value="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Email Address</label>
+                                        <input id="email" type="email" placeholder="Email" value="" required
+                                            class="form-control" name="email" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Phone Number</label>
+                                        <input id="phoneNumber" type="tel" placeholder="Phone Number" required class="form-control"
+                                            name="phoneNumber" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-lg-12">
+                                    <div class="form-group">
+
+                                        <label>Photo</label>
+                                        <input class="form-control" type="file" name="userfile" id="category_image">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Password</label>
+                                        <input id="password" placeholder="Strong Password" type="password" class="form-control" required
+                                            name="password" value="" />
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-control-xs custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" required
+                                        name="agreeCheckboxUser" id="agree_checkbox_user" />
+                                    <label class="custom-control-label" for="agree_checkbox_user">I agree with
+                                       Talented JobMarket</label>
+                                    <a tabindex="-1" href="javascript:void(0);">Privacy Policy</a>
+                                    &amp;
+                                    <a tabindex="-1" href="javascript:void(0);"> Terms.</a>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary login-btn" type="submit">
+                                Create Account
+                            </button>
+                            <div class="account-footer text-center mt-3">
+                                Already have an account?
+                                <a class="forgot-link mb-0" href="<?= url_to('user/login') ?>">Login</a>
+                                <a class="forgot-link mb-0" href="<?= url_to('recruter/register') ?>">Recruter
+                                    Register</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    </main>
+    
+  </body>
+</html>

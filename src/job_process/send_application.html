@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Talented JobMarket</title>
+
+      <link type="image/x-icon" href="/assets/img/favicon.ico" rel="icon" />
+
+      <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css" />
+      <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker.css" />
+
+      <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css" />
+
+      <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
+
+      <link rel="stylesheet" href="/assets/css/style.css" />
+    
+  
+  </head>
+  <style>
+.attestation,
+.autorisation,
+.organigramme,
+.etatsFinancier,
+.projet,
+.factureFournisseur,
+.carteIdentite {
+    display: none;
+}
+</style>
+  <body>
+    <div class="main-wrapper">
+
+   
+
+
+<div class="main-wrapper">
+
+    <div class="breadcrumb-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-12">
+                    <nav aria-label="breadcrumb" class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                          
+                            <li class="breadcrumb-item"><a
+                                    href="">Home</a>
+                            </li>
+                          
+                            <li class="breadcrumb-item active" aria-current="page">Application</li>
+                        </ol>
+                    </nav>
+                    <h2 class="breadcrumb-title">Application</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 col-lg-12">
+                    <div class="card">
+                       
+                        <div class="card-body">
+                            <div id="message"></div>
+                            <form id="application" Method="post" enctype="multipart/form-data"
+                                action="">
+
+                                <div class=" info-widget">
+                                    <h4 class="card-title"></h4>
+                                    <div class="row">
+                                        <div class="upload-img col-md-6 col-sm-12">
+                                            <div class="form-check form-checkbox mb-3">
+                                                <input type="checkbox" class="form-check-input" id="attestation"
+                                                    required="">
+                                                <label class="form-check-label"
+                                                    for="customControlValidation1">Curriculum Vitae(Resume)
+                                                </label>
+                                                <div class="invalid-feedback">Example invalid feedback text</div>
+                                            </div>
+
+                                            <div class="attestation">
+                                                <div class="row">
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>En_tête:</label>
+
+                                                            <textarea rows="3" cols="5" class="form-control"
+                                                                name="entete"
+                                                                placeholder="En_tête de votre CV donne une petite description sur votre personne"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>LinkedIn URL</label>
+                                                            <input placeholder="https://www.linkedin.com/in/dally"
+                                                                required name="linkedIn" type="url"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div class="upload-img">
+                                                                <div class="change-photo-btn">
+                                                                    <span><i class="fa fa-upload"></i> Uploader CV
+                                                                    </span>
+                                                                    <input required type="file" name="cvFile"
+                                                                        class="upload">
+                                                                </div>
+                                                                <small class="form-text text-muted">Allowed PDF, DOC or
+                                                                    PNG. Max
+                                                                    size of
+                                                                    2MB</small>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="upload-img col-md-6 col-sm-12">
+                                            <div class="form-check form-checkbox mb-3">
+                                                <input type="checkbox" class="form-check-input" id="autorisation"
+                                                    required="">
+                                                <label class="form-check-label" for="customControlValidation1">Academic Transcript
+                                                </label>
+                                                <div class="invalid-feedback">Example invalid feedback text</div>
+                                            </div>
+
+                                            <div class="autorisation">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Collegue:</label>
+                                                            <input name="etablissement" required placeholder=" Location"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Major:</label>
+                                                            <input placeholder="Software Engineering" required name="major"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+
+                                                        <label>Degree:</label>
+                                                        <select name="diplome" class="select">
+                                                            <option value="Doctorate">Doctorate</option>
+                                                            <option value="Master">Master</option>
+                                                            <option value="Licence">Bachelor's Degree</option>
+                                                           
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Date:</label>
+                                                            <input placeholder="Date Autorisation" required
+                                                                name="dateObtention" type="date" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div class="upload-img">
+                                                                <div class="change-photo-btn">
+                                                                    <span><i class="fa fa-upload"></i>
+                                                                        Transcript
+                                                                    </span>
+                                                                    <input name="diplomeFile" required type="file"
+                                                                        class="upload">
+                                                                </div>
+                                                                <small class="form-text text-muted">Allowed PDF, DOC or
+                                                                    PNG. Max
+                                                                    size of
+                                                                    2MB</small>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="upload-img col-md-6 col-sm-12">
+                                            <div class="form-check form-checkbox mb-3">
+                                                <input type="checkbox" class="form-check-input" id="organigramme"
+                                                    required="">
+                                                <label class="form-check-label"
+                                                    for="customControlValidation1">Work Experience</label>
+                                                <div class="invalid-feedback">Example invalid feedback text</div>
+                                            </div>
+
+                                            <div class="organigramme">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+
+                                                        <label>Enterprise:</label>
+                                                        <input placeholder="Entreprise" required name="entreprise"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+
+                                                        <label>Job Position:</label>
+                                                        <input placeholder="Poste Occupé" required name="poste"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+
+                                                        <label>Departement:</label>
+                                                        <input placeholder="Departement" required name="departement"
+                                                            type="text" class="form-control">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Started Date:</label>
+                                                            <input placeholder="Date Début" required name="dateDebut"
+                                                                type="date" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Date:</label>
+                                                            <input placeholder="Date Fin" name="dateFin" type="date"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <textarea rows="3" cols="5" class="form-control"
+                                                                name="responsibilities"
+                                                                placeholder="List responsibilities like: -Task1; \n -Task2; \n -Task3;\n ... \n  \n -TaskN;"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="upload-img col-md-6 col-sm-12">
+                                            <div class="form-check form-checkbox mb-3">
+                                                <input type="checkbox" class="form-check-input" id="carteIdentite"
+                                                    required="">
+                                                <label class="form-check-label" for="customControlValidation1">Other Documents</label>
+                                                <div class="invalid-feedback">Example invalid feedback text</div>
+                                            </div>
+
+                                            <div class="carteIdentite">
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div class="upload-img">
+                                                                <div class="change-photo-btn">
+                                                                    <span><i class="fa fa-upload"></i> 
+                                                                        Other Documents</span>
+                                                                    <input type="file" name="carteIdentite"
+                                                                        class="upload">
+                                                                </div>
+                                                                <small class="form-text text-muted">Allowed PDF, JPG or
+                                                                    PNG. Max
+                                                                    size of
+                                                                    2MB</small>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="upload-img col-md-6 col-sm-12">
+                                            <div class="form-check form-checkbox mb-3">
+                                                <input type="checkbox" class="form-check-input" id="etatsFinancier"
+                                                    required="">
+                                                <label class="form-check-label" for="customControlValidation1">Cover Letter</label>
+                                                <div class="invalid-feedback">Example invalid feedback text</div>
+                                            </div>
+
+                                            <div class="etatsFinancier">
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div class="upload-img">
+                                                                <div class="change-photo-btn">
+                                                                    <span><i class="fa fa-upload"></i> Cover Letter
+                                                                    </span>
+                                                                    <input name="lettreMotivation" required type="file"
+                                                                        class="upload">
+                                                                </div>
+                                                                <small class="form-text text-muted">Allowed PDF. Max
+                                                                    size of
+                                                                    30MB</small>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="upload-img col-md-6 col-sm-12">
+                                            <div class="form-check form-checkbox mb-3">
+
+                                                <input type="checkbox" class="form-check-input" id="projet" required="">
+                                                <label class="form-check-label"
+                                                    for="customControlValidation1">Skills</label>
+                                                <div class="invalid-feedback">Example invalid feedback text</div>
+                                            </div>
+
+                                            <div class="projet">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Skills:</label>
+                                                            <textarea rows="3" cols="5" class="form-control"
+                                                                name="hardSkill"
+                                                                placeholder="List Your Skills: -Skill1; \n -Skill2; \n -Skill3;\n ... \n -SkillN;"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                   
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Languages:</label>
+                                                            <select name="langue" class="select" id="langues">
+                                                                <optgroup label="European Languages">
+                                                                    <option value="Español">Español</option>
+                                                                    <option value="French">French</option>
+                                                                    <option value="English">English</option>
+
+                                                                    <option value="Deutsch">Deutsch</option>  
+
+                                                                    <option value="Italiano">Italiano</option>
+                                                                    <option value="Portuguese">Português</option>
+                                                                    <option value="Русский">Русский</option>  
+
+                                                                </optgroup>
+                                                                <optgroup label="African languages">
+                                                                    <option value="Swahili">Swahili</option>
+                                                                    <option value="Zulu">Zulu</option>
+                                                                    <option value="Yoruba">Yoruba</option>
+                                                                    <option value="Hausa">Hausa</option>
+                                                                </optgroup>
+                                                                <optgroup label="Asiatic Languages">
+                                                                    <option value="Japonais">Japonese</option>
+                                                                    <option value="Chinois">Chinese</option>
+                                                                    <option value="Coréen">Corean</option>
+                                                                </optgroup>
+                                                                <optgroup label="Autres langues">
+                                                                    <option value="Arabe">Arabe</option>
+                                                                    <option value="Russe">Russe</option>
+                                                                    <option value="Portugais">Portugais</option>
+                                                                </optgroup>
+                                                                <optgroup label="Sino-Tibetan Languages">
+                                                                    <option value="zh">中文</option>
+                                                                    <option value="ja">日本語</option>
+                                                                    <option value="ko">한국어</option>
+                                                                </optgroup>
+                                                                <optgroup label="Afro-Asiatic Languages">
+                                                                    <option value="ar">العربية</option>
+                                                                </optgroup>
+                                                                <optgroup label="Dravidian Languages">
+                                                                    <option value="te">తెలుగు</option>
+                                                                    <option value="ta">தமிழ்</option>
+                                                                </optgroup>
+                                                                <optgroup label="Other Languages">
+                                                                    <option value="hi">हिन्दी</option>
+                                                                    <option value="bn">বাংলা</option>
+                                                                    <option value="id">Bahasa Indonesia</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Langues:</label>
+                                                            <textarea rows="3" cols="5" id="resultat"
+                                                                class="form-control" readonly name="langue"
+                                                                placeholder="Langues"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                   
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="payment-widget">
+                                    <h4 class="card-title">Contacts</h4>
+
+                                    <div class="payment-list">
+
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group card-label">
+                                                    <label for="card_number">Email</label>
+                                                    <input class="form-control" id="card_number" name="email" required
+                                                        placeholder="mars@gmail.com" type="email">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-4">
+                                                <div class="form-group card-label">
+                                                    <label for="cvv">Phone Number</label>
+                                                    <input class="form-control" required name="phone" id="cvv"
+                                                        type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="terms-accept">
+                                        <div class="custom-checkbox">
+                                            <input type="checkbox" id="terms_accept">
+                                            <label for="terms_accept">I have read and accepted <a href="#">Terms
+                                                    &amp;
+                                                    Conditions</a></label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="submit-section mt-4">
+                                        <button id="loading" type="submit"
+                                            class="btn btn-primary submit-btn">Apply</button>
+                                    </div>
+
+
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+               
+
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script {csp-script-nonce}>
+    
+        document.querySelector('#attestation').addEventListener("change", e => {
+
+            if (e.target.checked) {
+                document.querySelector('.attestation').style.display="block";
+            } else {
+                document.querySelector('.attestation').style.display="none";
+            }
+
+           
+        });
+
+        document.querySelector('#autorisation').addEventListener("change", e => {
+
+            if (e.target.checked) {
+                document.querySelector('.autorisation').style.display="block";
+            } else {
+                document.querySelector('.autorisation').style.display="none";
+            }
+        });
+
+        document.querySelector('#organigramme').addEventListener("change", e => {
+
+            if (e.target.checked) {
+                document.querySelector('.organigramme').style.display="block";
+            } else {
+                document.querySelector('.organigramme').style.display="none";
+            }
+        });
+
+        document.querySelector('#etatsFinancier').addEventListener("change", e => {
+
+            if (e.target.checked) {
+                document.querySelector('.etatsFinancier').style.display="block";
+            } else {
+                document.querySelector('.etatsFinancier').style.display="none";
+            }
+        });
+
+        document.querySelector('#projet').addEventListener("change", e => {
+
+            if (e.target.checked) {
+                document.querySelector('.projet').style.display="block";;
+            } else {
+                document.querySelector('.projet').style.display="none";;
+            }
+        });
+
+        document.querySelector('#carteIdentite').addEventListener("change", e => {
+
+            if (e.target.checked) {
+                document.querySelector('.carteIdentite').style.display="block";;
+            } else {
+                document.querySelector('.carteIdentite').style.display="none";
+            }
+        });
+
+       
+
+        let form = document.querySelector('#application')
+        form.email.addEventListener('input', function() {
+
+            validEmail(this);
+        });
+
+
+
+
+        const validEmail = function(inputMail) {
+            let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
+            let testEmail = emailRegExp.test(inputMail.value);
+            let small = document.querySelector('#valideEmail');
+            if (testEmail) {
+
+                small.innerHTML = 'Adresse Valide';
+                small.classList.remove('text-danger');
+                small.classList.add('text-success');
+                return true;
+            } else {
+                small.innerHTML = 'Adresse Non Valide';
+                small.classList.remove('text-success');
+                small.classList.add('text-danger');
+                return false;
+            }
+        };
+
+        // $("#subvention").submit(function(e) {
+        //     e.preventDefault();
+        //     var formulaire = $(this);
+        //     var post_url = formulaire.attr("action");
+        //     var post_data = formulaire.serialize();
+        //     // new FormData(this)
+        //     val = $("#loading").val();
+        //     $("#loading")
+        //         .empty()
+        //         .append(
+        //             'Loading...'
+        //         );
+        //     $.ajax({
+        //         type: "POST",
+        //         url: post_url,
+        //         data: new FormData(this),
+        //         contentType: false,
+        //         cache: false,
+        //         processData: false,
+        //         timeout: 4000,
+
+        //         success: function(response) {
+        //             console.log(response)
+        //             var obj = JSON.parse(response)
+        //             console.log(response)
+
+        //             if (obj.statut === true) {
+
+        //                 location.href =
+        //                     'http://localhost/StartupInvestment/index.php/subvention/checkout-success.php';
+        //                 //window.location.reload();
+        //             } else {
+
+        //                 window.location.reload();
+        //             }
+
+
+        //             //$('#profile').load(location.href + '#profile>*','');
+        //         },
+        //     });
+        // });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (validEmail(form.email)) {
+                form.submit();
+            }
+        });
+
+   
+    </script>
+
+    <script>
+    const selectLangue = document.getElementById('langues');
+    const textareaResultat = document.getElementById('resultat');
+
+    selectLangue.addEventListener('change', () => {
+        textareaResultat.value += selectLangue.value + ";" + '\n';
+    });
+    </script>
+
+    </main>
+    <footer  id="main-footer"></footer>
+  </body>
+</html>

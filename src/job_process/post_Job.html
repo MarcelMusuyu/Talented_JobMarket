@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Talented JobMarket</title>
+
+      <link type="image/x-icon" href="/assets/img/favicon.ico" rel="icon" />
+
+      <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css" />
+      <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css" />
+
+      <link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker.css" />
+
+      <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css" />
+
+      <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
+
+      <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="/js/main.js" type="module"></script>
+  
+  </head>
+  <body>
+    <div class="main-wrapper">
+
+    <div class="breadcrumb-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-12">
+                    <nav aria-label="breadcrumb" class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        </ol>
+                    </nav>
+                    <h2 class="breadcrumb-title">Dashboard</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+
+                    <div class="profile-sidebar">
+                        <div class="user-widget">
+                           
+                            <div class="pro-avatar"></div>
+                            <div class="rating">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="user-info-cont">
+                                <h4 class="usr-name"></h4>
+                                <p class="Candidat-type"></p>
+                            </div>
+                            
+                        </div>
+                        <div class="progress-bar-custom">
+                            <h6>Complete your profiles </h6>
+                            <div class="pro-progress">
+                                <div class="tooltip-toggle" tabindex="0"></div>
+                                <div class="tooltip">80%</div>
+                            </div>
+                        </div>
+                        <div class="custom-sidebar-nav">
+                            <ul>
+                              
+                                <li><a href=""
+                                        class="active"><i class="fas fa-home"></i>Dashboard
+
+                                        <span><i class="fas fa-chevron-right"></i></span></a></li>
+                                <li><a
+                                        href=""><i
+                                            class="fas fa-clock"></i>Applications <span><i
+                                                class="fas fa-chevron-right"></i></span></a></li>
+                               
+                                <li><a href=""><i
+                                            class="fas fa-star"></i>Post Job Position <span><i
+                                                class="fas fa-chevron-right"></i></span></a></li>
+                              
+                                <li><a href=""><i
+                                            class=" fas fa-user-cog"></i>Profile <span><i
+                                                class="fas fa-chevron-right"></i></span></a></li>
+                              
+                                <li><a href="chat-mentee.html"><i class="fas fa-comments"></i>Notifications <span><i
+                                                class="fas fa-chevron-right"></i></span></a></li>
+
+
+                                <li><a href="<?=url_to('user/logout')?>"><i class="fas fa-sign-out-alt"></i>Logout
+                                        <span><i class="fas fa-chevron-right"></i></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-7 col-lg-8 col-xl-9">
+                    <div class="content container-fluid">
+
+                        <div class="page-header">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 class="page-title">Post Job Position</h3>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index_admin.html">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Form</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Job Opportunities</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="<?=site_url('offre/publication')?>" method="post">
+                                            <?= csrf_field() ?>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h4 class="card-title"> Job Position Details</h4>
+                                                    <div class="form-group">
+                                                        <label>Job Position:</label>
+                                                        <input type="text" class="form-control" name="poste">
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Number of Position Provided:</label>
+                                                                <input type="number" class="form-control"
+                                                                    name="nombre_poste">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Work Experiences</label>
+                                                                <input type="text" name="experience"
+                                                                    class="form-control" placeholder="Work Experiences">
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>Description:</label>
+                                                        <textarea rows="5" cols="5" class="form-control"
+                                                            name="description"
+                                                            placeholder="Job Description"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Responsibilities:</label>
+                                                        <textarea rows="5" cols="5" class="form-control"
+                                                            name="responsabilite"
+                                                            placeholder="Responsibilities"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h4 class="card-title">Job Position Details</h4>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Location:</label>
+                                                                <input type="text" name="location"
+                                                                    class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Closed Date :</label>
+                                                                <input type="date" name="closed date"
+                                                                    class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Sending Email:</label>
+                                                                <input type="email" name="email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Contract:</label>
+                                                                <select class="select" name="type_contrat">
+                                                                    <option>Select A Contract</option>
+                                                                    <option value="FTC">Fixed-term Contract</option>
+                                                                    <option value="PC">Permanent Contract</option>
+                                                                  
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <label>Degree:</label>
+                                                            <textarea rows="5" cols="5" class="form-control"
+                                                                name="formation" placeholder=""></textarea>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Skills:</label>
+                                                            <textarea rows="5" cols="5" class="form-control"
+                                                                name="competence" placeholder="Skills"></textarea>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="text-end">
+                                                <!-- <button type="button" class="btn btn-primary" id="addField">Add
+                                                    Field</button> -->
+                                                <button type="submit" class="btn btn-primary">Post</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <footer  id="main-footer"></footer>
+  </body>
+</html>
