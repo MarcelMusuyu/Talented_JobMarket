@@ -50,15 +50,15 @@
                          
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" id="firstname">
                                         <label class="form-control-label">Firstname</label>
                                         <input id="first-name" type="text" required class="form-control"
                                             name="first_name" value="" placeholder="Firstname" autofocus="" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label class="form-control-label">Lastname</label>
+                                    <div class="form-group" id="lastname">
+                                        <label  class="form-control-label">Lastname</label>
                                         <input id="last-name" type="text" placeholder="Lastname" required class="form-control" name="last_name"
                                             value="" />
                                     </div>
@@ -72,11 +72,16 @@
                                             class="form-control" name="email" />
                                     </div>
                                 </div>
+                                
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="form-control-label">Phone Number</label>
-                                        <input id="phoneNumber" type="tel" placeholder="Phone Number" required class="form-control"
-                                            name="phoneNumber" value="" />
+                                        <label>User Role:</label>
+                                        <select class="select form-control" id="user_role" name="type_user">
+                                            <option>Select A Role</option>
+                                            <option value="Candiate">Candidate</option>
+                                            <option value="Recruiter">Recruiter</option>
+                                                                  
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -113,8 +118,8 @@
                             </button>
                             <div class="account-footer text-center mt-3">
                                 Already have an account?
-                                <a class="forgot-link mb-0" href="<?= url_to('user/login') ?>">Login</a>
-                                <a class="forgot-link mb-0" href="<?= url_to('recruter/register') ?>">Recruter
+                                <a class="forgot-link mb-0" href="/account/login.html">Login</a>
+                                <a class="forgot-link mb-0" href="/account/register.html">Recruter
                                     Register</a>
                             </div>
                         </form>
@@ -128,6 +133,38 @@
 
 
     </main>
-    
+   
+    <script>
+         const skillSet = document.getElementById('user_role');
+        const firstname= document.getElementById('firstname');
+        const lastname = document.getElementById('lastname');
+        
+        skillSet.addEventListener('change', () => {
+             if(skillSet.value == "Recruiter"){
+                firstname.innerHTML="";
+                firstname.innerHTML=` <label class="form-control-label">Enterprise Name</label>
+                                        <input id="first-name" type="text" required class="form-control"
+                                            name="first_name" value="" placeholder="Enterprise" autofocus="" />`;
+                lastname.innerHTML= "";
+                lastname.innerHTML= `
+                                        <label>Enterprise Type:</label>
+                                        <select class="select form-control" id="enttreprise_type" name="lastname">
+                                            <option>Select A Type</option>
+                                            <option value="startup">Startup</option>
+                                            <option value="small corporation">Small corporation</option>
+                                            <option value="large corporation">Large corporation</option>               
+                                        </select>
+                                    </div>
+                                </div>`;
+             }else{
+                firstname.innerHTML = ` <label class="form-control-label">Firstname</label>
+                                        <input id="first-name" type="text" required class="form-control"
+                                            name="first_name" value="" placeholder="Firstname" autofocus="" />`;
+                lastname.innerHTML= `<label  class="form-control-label">Lastname</label>
+                                        <input id="last-name" type="text" placeholder="Lastname" required class="form-control" name="last_name"
+                                            value="" />`;
+             }
+        }); 
+    </script>
   </body>
 </html>

@@ -1,17 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-            document.getElementById("resumeCV").addEventListener("click", function(e) {
-                            const url = "http://localhost:5173/job_process/Resume.pdf";
-                            const canvas2 = document.getElementById("pdf-render2");
-                        
-                            const prev = document.querySelector("#prev-page2");
-                            const next = document.querySelector("#next-page2");
-                            const count = document.querySelector("#page-num2");
-                            
-                            printPDF(url, canvas2, prev, next, count)
-                        });
-       
-
-                document.getElementById("coverLetter").addEventListener("click", function(e) {
+           
+                document.getElementById("resumeCV").addEventListener("click", function(e) {
 
                     const url = "http://localhost:5173/job_process/Resume.pdf";
                      const canvas1 = document.getElementById("pdf-render1");
@@ -23,7 +12,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     printPDF(url, canvas1, prev, next, count)
                 });
 
+                document.getElementById("coverLetter").onload = function () {
+                    const url = "http://localhost:5173/job_process/Resume.pdf";
+                     const canvas1 = document.getElementById("pdf-render1");
+                    
+                    const prev = document.querySelector("#prev-page1");
+                    const next = document.querySelector("#next-page1");
+                    const count = document.querySelector("#page-num1");
+                     
+                    printPDF(url, canvas1, prev, next, count)
 
+                 };
+                
                 document.getElementById("transcript").addEventListener("click", function(e) {
 
                     const url = "http://localhost:5173/job_process/Resume.pdf";
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     printPDF(url, canvas3, prev, next, count)
                 });
 
-                document.getElementById("certificate").addEventListener("click", function(e) {
+                document.getElementById("coverLetter").addEventListener("click", function(e) {
 
                     const url = "http://localhost:5173/job_process/Resume.pdf";
                     const canvas4 = document.getElementById("pdf-render4");

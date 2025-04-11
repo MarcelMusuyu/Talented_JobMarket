@@ -22,17 +22,16 @@
       <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
 
       <link rel="stylesheet" href="/assets/css/style.css" />
+      <script src="/js/main.js" type="module"></script>
     
   
   </head>
   <style>
 .attestation,
 .autorisation,
-.organigramme,
+
 .etatsFinancier,
-.projet,
-.factureFournisseur,
-.carteIdentite {
+.projet {
     display: none;
 }
 </style>
@@ -85,9 +84,9 @@
                                         <div class="upload-img col-md-6 col-sm-12">
                                             <div class="form-check form-checkbox mb-3">
                                                 <input type="checkbox" class="form-check-input" id="attestation"
-                                                    required="">
+                                                    required >
                                                 <label class="form-check-label"
-                                                    for="customControlValidation1">Curriculum Vitae(Resume)
+                                                    for="customControlValidation1">Resume
                                                 </label>
                                                 <div class="invalid-feedback">Example invalid feedback text</div>
                                             </div>
@@ -95,34 +94,13 @@
                                             <div class="attestation">
                                                 <div class="row">
 
-
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>En_tête:</label>
-
-                                                            <textarea rows="3" cols="5" class="form-control"
-                                                                name="entete"
-                                                                placeholder="En_tête de votre CV donne une petite description sur votre personne"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>LinkedIn URL</label>
-                                                            <input placeholder="https://www.linkedin.com/in/dally"
-                                                                required name="linkedIn" type="url"
-                                                                class="form-control">
-                                                        </div>
-                                                    </div>
-
-
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="upload-img">
                                                                 <div class="change-photo-btn">
-                                                                    <span><i class="fa fa-upload"></i> Uploader CV
+                                                                    <span><i class="fa fa-upload"></i> Upload CV
                                                                     </span>
-                                                                    <input required type="file" name="cvFile"
+                                                                    <input required type="file" name = "resume"
                                                                         class="upload">
                                                                 </div>
                                                                 <small class="form-text text-muted">Allowed PDF, DOC or
@@ -148,39 +126,7 @@
 
                                             <div class="autorisation">
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Collegue:</label>
-                                                            <input name="etablissement" required placeholder=" Location"
-                                                                type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Major:</label>
-                                                            <input placeholder="Software Engineering" required name="major"
-                                                                type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-
-                                                        <label>Degree:</label>
-                                                        <select name="diplome" class="select">
-                                                            <option value="Doctorate">Doctorate</option>
-                                                            <option value="Master">Master</option>
-                                                            <option value="Licence">Bachelor's Degree</option>
-                                                           
-                                                            </option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Date:</label>
-                                                            <input placeholder="Date Autorisation" required
-                                                                name="dateObtention" type="date" class="form-control">
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="upload-img">
@@ -188,7 +134,7 @@
                                                                     <span><i class="fa fa-upload"></i>
                                                                         Transcript
                                                                     </span>
-                                                                    <input name="diplomeFile" required type="file"
+                                                                    <input name="tramscript" required type="file"
                                                                         class="upload">
                                                                 </div>
                                                                 <small class="form-text text-muted">Allowed PDF, DOC or
@@ -205,98 +151,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="upload-img col-md-6 col-sm-12">
-                                            <div class="form-check form-checkbox mb-3">
-                                                <input type="checkbox" class="form-check-input" id="organigramme"
-                                                    required="">
-                                                <label class="form-check-label"
-                                                    for="customControlValidation1">Work Experience</label>
-                                                <div class="invalid-feedback">Example invalid feedback text</div>
-                                            </div>
-
-                                            <div class="organigramme">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-
-                                                        <label>Enterprise:</label>
-                                                        <input placeholder="Entreprise" required name="entreprise"
-                                                            type="text" class="form-control">
-                                                    </div>
-                                                    <div class="col-md-6">
-
-                                                        <label>Job Position:</label>
-                                                        <input placeholder="Poste Occupé" required name="poste"
-                                                            type="text" class="form-control">
-                                                    </div>
-                                                    <div class="col-md-6">
-
-                                                        <label>Departement:</label>
-                                                        <input placeholder="Departement" required name="departement"
-                                                            type="text" class="form-control">
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Started Date:</label>
-                                                            <input placeholder="Date Début" required name="dateDebut"
-                                                                type="date" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Date:</label>
-                                                            <input placeholder="Date Fin" name="dateFin" type="date"
-                                                                class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <textarea rows="3" cols="5" class="form-control"
-                                                                name="responsibilities"
-                                                                placeholder="List responsibilities like: -Task1; \n -Task2; \n -Task3;\n ... \n  \n -TaskN;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="upload-img col-md-6 col-sm-12">
-                                            <div class="form-check form-checkbox mb-3">
-                                                <input type="checkbox" class="form-check-input" id="carteIdentite"
-                                                    required="">
-                                                <label class="form-check-label" for="customControlValidation1">Other Documents</label>
-                                                <div class="invalid-feedback">Example invalid feedback text</div>
-                                            </div>
-
-                                            <div class="carteIdentite">
-                                                <div class="row">
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <div class="upload-img">
-                                                                <div class="change-photo-btn">
-                                                                    <span><i class="fa fa-upload"></i> 
-                                                                        Other Documents</span>
-                                                                    <input type="file" name="carteIdentite"
-                                                                        class="upload">
-                                                                </div>
-                                                                <small class="form-text text-muted">Allowed PDF, JPG or
-                                                                    PNG. Max
-                                                                    size of
-                                                                    2MB</small>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-
-
-                                        </div>
 
                                         <div class="upload-img col-md-6 col-sm-12">
                                             <div class="form-check form-checkbox mb-3">
@@ -315,7 +169,7 @@
                                                                 <div class="change-photo-btn">
                                                                     <span><i class="fa fa-upload"></i> Cover Letter
                                                                     </span>
-                                                                    <input name="lettreMotivation" required type="file"
+                                                                    <input name="coverletter" required type="file"
                                                                         class="upload">
                                                                 </div>
                                                                 <small class="form-text text-muted">Allowed PDF. Max
@@ -343,16 +197,100 @@
 
                                             <div class="projet">
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                   <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Skills:</label>
-                                                            <textarea rows="3" cols="5" class="form-control"
-                                                                name="hardSkill"
-                                                                placeholder="List Your Skills: -Skill1; \n -Skill2; \n -Skill3;\n ... \n -SkillN;"></textarea>
+                                                            <select name="skills" class="select form-controld="skills">
+                                                                <optgroup label="Programming Languages">
+                                                                    <option value="javascript">JavaScript</option>
+                                                                    <option value="python">Python</option>
+                                                                    <option value="java">Java</option>
+                                                                    <option value="c++">C++</option>
+                                                                    <option value="csharp">C#</option>
+                                                                    <option value="php">PHP</option>
+                                                                    <option value="typescript">TypeScript</option>
+                                                                    <option value="ruby">Ruby</option>
+                                                                    <option value="go">Go</option>
+                                                                    <option value="swift">Swift</option>
+                                                                    <option value="kotlin">Kotlin</option>
+                                                                </optgroup>
+                                                                <optgroup label="Frontend Frameworks">
+                                                                    <option value="react">React</option>
+                                                                    <option value="angular">Angular</option>
+                                                                    <option value="vuejs">Vue.js</option>
+                                                                    <option value="svelte">Svelte</option>
+                                                                </optgroup>
+                                                                <optgroup label="Backend Frameworks">
+                                                                    <option value="nodejs">Node.js</option>
+                                                                    <option value="expressjs">Express.js</option>
+                                                                    <option value="django">Django</option>
+                                                                    <option value="flask">Flask</option>
+                                                                    <option value="spring">Spring</option>
+                                                                    <option value="aspnet">ASP.NET</option>
+                                                                    <option value="laravel">Laravel</option>
+                                                                    <option value="rails">Rails</option>
+                                                                </optgroup>
+                                                                <optgroup label="Databases">
+                                                                    <option value="mysql">MySQL</option>
+                                                                    <option value="postgresql">PostgreSQL</option>
+                                                                    <option value="mongodb">MongoDB</option>
+                                                                    <option value="sqlserver">SQL Server</option>
+                                                                    <option value="oracle">Oracle</option>
+                                                                    <option value="sqlite">SQLite</option>
+                                                                </optgroup>
+                                                                <optgroup label="Business/Management">
+                                                                    <option value="project_management">Project Management</option>
+                                                                    <option value="business_analysis">Business Analysis</option>
+                                                                    <option value="economy">Economics</option>
+                                                                    <option value="finance">Finance</option>
+                                                                    <option value="accounting">Accounting</option>
+                                                                    <option value="marketing">Marketing</option>
+                                                                    <option value="sales">Sales</option>
+                                                                </optgroup>
+                                                                    <optgroup label="IT/Systems">
+                                                                        <option value="it_support">IT Support</option>
+                                                                        <option value="system_administration">System Administration</option>
+                                                                        <option value="network_administration">Network Administration</option>
+                                                                        <option value="cybersecurity">Cybersecurity</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="AI/Machine Learning">
+                                                                        <option value="machine_learning">Machine Learning</option>
+                                                                        <option value="deep_learning">Deep Learning</option>
+                                                                        <option value="data_science">Data Science</option>
+                                                                        <option value="natural_language_processing">Natural Language Processing</option>
+                                                                    </optgroup>
+                                                                <optgroup label="Cloud Technologies">
+                                                                    <option value="aws">AWS</option>
+                                                                    <option value="azure">Azure</option>
+                                                                    <option value="gcp">Google Cloud Platform</option>
+                                                                </optgroup>
+                                                                <optgroup label="DevOps">
+                                                                    <option value="docker">Docker</option>
+                                                                    <option value="kubernetes">Kubernetes</option>
+                                                                    <option value="jenkins">Jenkins</option>
+                                                                    <option value="git">Git</option>
+                                                                    <option value="ansible">Ansible</option>
+                                                                    <option value="terraform">Terraform</option>
+                                                                </optgroup>
+                                                                <optgroup label="Design">
+                                                                <option value="figma">Figma</option>
+                                                                <option value="sketch">Sketch</option>
+                                                                <option value="photoshop">Adobe Photoshop</option>
+                                                                <option value="illustrator">Adobe Illustrator</option>
+                                                                </optgroup>
+                                                            </select>
                                                         </div>
                                                     </div>
 
-                                                   
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Skills:</label>
+                                                            <textarea rows="3" cols="5" id="resultat-skill"
+                                                                class="form-control" readonly name="skill"
+                                                                placeholder="Skills"></textarea>
+                                                        </div>
+                                                    </div>
+
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -411,7 +349,7 @@
                                                         <div class="form-group">
                                                             <label>Langues:</label>
                                                             <textarea rows="3" cols="5" id="resultat"
-                                                                class="form-control" readonly name="langue"
+                                                                class="form-control" readonly name="language"
                                                                 placeholder="Langues"></textarea>
                                                         </div>
                                                     </div>
@@ -447,9 +385,9 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group card-label">
-                                                    <label for="cvv">Phone Number</label>
-                                                    <input class="form-control" required name="phone" id="cvv"
-                                                        type="text">
+                                                    <label for="password">Password</label>
+                                                    <input class="form-control" required name="password" id="password"
+                                                        type="password">
                                                 </div>
                                             </div>
                                         </div>
@@ -512,14 +450,6 @@
             }
         });
 
-        document.querySelector('#organigramme').addEventListener("change", e => {
-
-            if (e.target.checked) {
-                document.querySelector('.organigramme').style.display="block";
-            } else {
-                document.querySelector('.organigramme').style.display="none";
-            }
-        });
 
         document.querySelector('#etatsFinancier').addEventListener("change", e => {
 
@@ -539,14 +469,7 @@
             }
         });
 
-        document.querySelector('#carteIdentite').addEventListener("change", e => {
-
-            if (e.target.checked) {
-                document.querySelector('.carteIdentite').style.display="block";;
-            } else {
-                document.querySelector('.carteIdentite').style.display="none";
-            }
-        });
+       
 
        
 
@@ -630,13 +553,20 @@
     </script>
 
     <script>
-    const selectLangue = document.getElementById('langues');
-    const textareaResultat = document.getElementById('resultat');
+        const selectLangue = document.getElementById('langues');
+        const textareaResultat = document.getElementById('resultat');
 
-    selectLangue.addEventListener('change', () => {
-        textareaResultat.value += selectLangue.value + ";" + '\n';
-    });
-    </script>
+        selectLangue.addEventListener('change', () => {
+            textareaResultat.value += selectLangue.value + ";" + '\n';
+        });
+
+        const skillSet = document.getElementById('skills');
+        const textareaResultatskill = document.getElementById('resultat-skill');
+
+        skillSet.addEventListener('change', () => {
+            textareaResultatskill.value += skillSet.value + ";" + '\n';
+        }); 
+    </script>       
 
     </main>
     <footer  id="main-footer"></footer>
