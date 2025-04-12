@@ -16,7 +16,7 @@ export default defineConfig({
 	application_list: resolve(__dirname, "src/job_process/application_list.html"),
 	job_detail: resolve(__dirname, "src/job_process/job_detail.html"),
         notification: resolve(__dirname, "src/job_process/notification.html"),
-        post_Job: resolve(__dirname, "src/job_process/post_job.html"),
+        post_Job: resolve(__dirname, "src/job_process/post_Job.html"),
         send_application: resolve(__dirname, "src/job_process/send_application.html"),
       },
     },
