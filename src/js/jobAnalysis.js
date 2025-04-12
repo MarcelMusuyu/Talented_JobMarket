@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
            
                 document.getElementById("resumeCV").addEventListener("click", function(e) {
 
-                    const url = "http://localhost:5173/job_process/Resume.pdf";
+                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
                      const canvas1 = document.getElementById("pdf-render1");
                     
                     const prev = document.querySelector("#prev-page1");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 });
 
                 document.getElementById("coverLetter").onload = function () {
-                    const url = "http://localhost:5173/job_process/Resume.pdf";
+                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
                      const canvas1 = document.getElementById("pdf-render1");
                     
                     const prev = document.querySelector("#prev-page1");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 
                 document.getElementById("transcript").addEventListener("click", function(e) {
 
-                    const url = "http://localhost:5173/job_process/Resume.pdf";
+                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
                     const canvas3 = document.getElementById("pdf-render3");
                      
                     const prev = document.querySelector("#prev-page3");
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 document.getElementById("coverLetter").addEventListener("click", function(e) {
 
-                    const url = "http://localhost:5173/job_process/Resume.pdf";
+                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
                     const canvas4 = document.getElementById("pdf-render4");
                  
                     const prev = document.querySelector("#prev-page4");
