@@ -36,7 +36,10 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
 }
 
 export function renderWithTemplate(template, parentElement, data, callback){
-    parentElement.innerHTML = template;
+    if(template && parentElement){
+      parentElement.innerHTML = template;
+    }
+   
     if(callback) {
       callback(data);
     }
@@ -60,9 +63,9 @@ export async function loadHeaderFooter(){
  
   const footerElement = document.querySelector("#main-footer");
 
-  const cartItems = getLocalStorage("so-cart") || [];
   
-  renderWithTemplate(headerTemplate, headerElement,cartItems,updateCartCount);
+  
+  renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
 
     

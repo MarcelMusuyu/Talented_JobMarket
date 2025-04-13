@@ -555,16 +555,33 @@
     <script>
         const selectLangue = document.getElementById('langues');
         const textareaResultat = document.getElementById('resultat');
-
+        let selectedOptionsArray = [];  
         selectLangue.addEventListener('change', () => {
-            textareaResultat.value += selectLangue.value + ";" + '\n';
+            
+            if (!selectedOptionsArray.includes(selectLangue.value)) {
+                selectedOptionsArray.push(selectLangue.value);
+                textareaResultat.value = selectedOptionsArray.join(", ");
+            } else {
+                const index = selectedOptionsArray.indexOf(selectLangue.value);
+                selectedOptionsArray.splice(index, 1);
+                textareaResultat.value = selectedOptionsArray.join(", ");
+            }
+             
         });
 
         const skillSet = document.getElementById('skills');
         const textareaResultatskill = document.getElementById('resultat-skill');
-
+         let selecteSkillArray = [];  
         skillSet.addEventListener('change', () => {
-            textareaResultatskill.value += skillSet.value + ";" + '\n';
+            if (!selecteSkillArray.includes(skillSet.value)) {
+                selecteSkillArray.push(skillSet.value);
+                 textareaResultatskill.value = selecteSkillArray.join(", ");
+            } else {
+                const index = slecteSkillArray.indexOf(skillSet.value);
+                selecteSkillArray.splice(index, 1);
+                 textareaResultatskill.value = selecteSkillArray.join(", ");
+            }
+           
         }); 
     </script>       
 
