@@ -23,6 +23,7 @@
 
       <link rel="stylesheet" href="/assets/css/style.css" />
       <script src="/js/main.js" type="module"></script>  
+      <script src="/js/job-details.js" type="module"></script>  
   
   </head>
   <body>
@@ -60,19 +61,19 @@
                                             <img src="/images/logos/logo.jpg"   class="img-fluid" alt="Logo" />
                                             </a>
                                         </div>
-                                        <h3 class="blog-title">Institut Superieur Technique de Lubumbashi</h3>
+                                        <h3 class="blog-title">Talented JobMarket</h3>
                                         <div class="blog-info clearfix">
                                             <div class="post-left">
                                                 <ul>
                                                     <li>
                                                         <div class="post-author">
                                                             <a href="profile.html"><img src="/images/logos/logoweb.jpg"   class="img-fluid" alt="Logo" />
-                                                            <span>MarsTech</span></a>
+                                                            <span id="recruiter"></span></a>
                                                         </div>
                                                     </li>
                                                     <li><i id="fa-calendar" class="far fa-calendar"></i>
                                                         <script>
-                                                        document.getElementById("fa-calendar").innerHTML = new Date().now()
+                                                        document.getElementById("fa-calendar").innerHTML = new Date().now
                                                         </script>
                                                     </li>
                                                     <li><i class="far fa-comments"></i>12 Comments</li>
@@ -84,25 +85,25 @@
                                         
                                             <p>
                                             <h4><strong class="text-info">Description</strong></h4><br>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, temporibus dolorem praesentium ratione perferendis sint molestiae nisi doloremque, soluta sed minima odit doloribus nesciunt. Eos ratione enim dolorum quos eveniet!
+                                               <em id="description"></em>
                                             </p>
 
                                             <p>
 
                                             <h4><strong class="text-info">Responsibilities</strong></h4><br>
                                         
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, dolores animi aliquam laudantium quam accusantium perspiciatis cumque aut blanditiis voluptatibus. Veritatis quia dolor earum consectetur unde laudantium nesciunt excepturi asperiores.
+                                         <em id="Responsibilities"></em>
                                         
                                             </p>
 
                                             <p>
                                             <h4><strong class="text-info">Education</strong></h4><br>
-                                                👨🏾‍🎓 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, perspiciatis rem expedita sapiente maiores consectetur nobis, eius exercitationem est laborum corrupti, qui quam et ipsa cum repudiandae quia totam unde!
+                                                👨🏾‍🎓 <em id="education"></em>
                                             </p>
 
                                             <p>
                                             <h4><strong class="text-info">Skills</strong></h4><br>
-                                                🛠Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, repellendus architecto. Totam, suscipit accusamus non eos dolor neque pariatur quas tempora atque consequuntur vel ipsam nihil nostrum iste deserunt repudiandae?
+                                                🛠  <em id="Skills"></em>
                                             
                                             </p>
 
@@ -123,7 +124,7 @@
                                         </div>
                                         <div class="card-body">
 
-                                            <a href="/job_process/send_application.html" class="btn btn-primary">
+                                            <a id="apply" href="/job_process/send_application.html" class="btn btn-primary">
                                                 <i class="fas fa-send"></i> Apply
                                             </a>
                                         </div>
@@ -141,14 +142,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="author-details">
-                                                    <a href="profile.html" class="blog-author-name">ISTL</a>
-                                                    <p class="mb-0">L’Institut Supérieur Technique de Lubumbashi fut créé en 2018 et
-                                                        agréé sous l’Arrêté Ministériel N°178/MINESU/CAB. MIN/TLL/JRM/SB/2020. Né
-                                                        sous l’initiative de Monsieur MPANYA MPANYA Jeannot, Président du Conseil
-                                                        d’Administration de cette institution. ISTL a été appuyé par le tout premier
-                                                        comité de Gestion dirigé par le Professeur Dr PhD Mpanya Mpanya Jeannot et
-                                                        Professeur ordinaire Loris Honoré NDABAR TUNG comme Secrétaire Général
-                                                        Académique et Madame BAKAJI MAYINA GERMAINE Comme Administrateur de Budget.
+                                                    <a href="profile.html" class="blog-author-name">Talented JobMarket</a>
+                                                    <p class="mb-0">
+                                                        This platform serves as an central hub for managing all hiring process. A recruiter could post relevant job Opportunity so that each user could assess it based on his profile. 
                                                     </p>
                                                 </div>
                                             </div>
@@ -184,17 +180,17 @@
                                     <div class="card-body">
                                     
                                         <ul class="categories">
-                                            <li><a href="#">Job Position <span> Software Engineer</span></a></li>
-                                            <li><a href="#">Work Experience<span>10 years</span></a></li>
+                                            <li><a href="#" id="job_title">Job Position <span> Software Engineer</span></a></li>
+                                            <li><a href="#" id="experience">Work Experience<span>10 years</span></a></li>
                                             <li><a href="#"><i class="far fa-money-bill-alt"></i>Salary
-                                                    <span>$3000-$5000/Month</span></a></li>
-                                            <li><a href="#">Type of Contract <span></span></a></li>
+                                                    <span id="salary">$3000-$5000/Month</span></a></li>
+                                            <li><a href="#" id="contract">Type of Contract <span></span></a></li>
                                             <li><a href="#"><i class="fas fa-map-marker-alt"></i> Location
-                                                    <span>Utah</span></a>
+                                                    <span id="location">Utah</span></a>
                                             </li>
-                                            <li><a href="#">Industry <span>Technology</span></a></li>
+                                            <li><a href="#">Status <span id="status">Open</span></a></li>
                                             <li><a href="#"><i class="far fa-clock"></i> Closed Date
-                                                    <span>2025</span></a></li>
+                                                    <span id="closingDate">2025</span></a></li>
                                             <li><a href="#">Sending Email <span>Email</span></a></li>
                                         </ul>
                                     

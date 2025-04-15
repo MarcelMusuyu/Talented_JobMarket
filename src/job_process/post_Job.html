@@ -131,7 +131,7 @@
                                         <h4 class="card-title">Job Opportunities</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form action="" method="post">
+                                        <form action="" id="jobForm" method="post">
                                           
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -181,36 +181,36 @@
                                                                     <option>Select A Contract</option>
                                                                     <option value="Full-time">Full-time</option>
                                                                     <option value="Part-time">Part-time</option>
-									 <option value="Remote">Remote</option>
- 									<option value="Internship">Internship</option>
- 									<option value="Temporary">Temporary</option>
- 									<option value="Contract">Contract</option>
- 									<option value="Freelance">Freelance</option>
-                                                        
+                                                                    <option value="Remote">Remote</option>
+                                                                    <option value="Internship">Internship</option>
+                                                                    <option value="Temporary">Temporary</option>
+                                                                    <option value="Contract">Contract</option>
+                                                                    <option value="Freelance">Freelance</option>
+                                                                                        
                                                                 </select>
                                                             </div>
                                                         </div>
-							<div class="col-md-6">
+							                            <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Salary:</label>
                                                                 <input type="text" name="salary" class="form-control">
                                                             </div>
                                                         </div>
-							<div class="col-md-6">
+							                            <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Experience:</label>
                                                                 <input type="text" name="experience" class="form-control">
-								<input type="text" hidden name="recruiter" class="form-control">
+								                                <input type="text" hidden name="recruiter" class="form-control">
                                                             </div>
                                                         </div>
-							<div class="col-md-6">
+							                            <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Contract:</label>
                                                                 <select class="select form-control" name="status">
                                                                     <option>Select A Status</option>
                                                                     <option value="open">Open</option>
                                                                     <option value="close">Close</option>
-								    <option value="draft">Draft</option>
+								                                    <option value="draft">Draft</option>
                                                         
                                                                 </select>
                                                             </div>
@@ -234,9 +234,8 @@
                                                 </div>
                                             </div>
                                             <div class="text-end">
-                                                <!-- <button type="button" class="btn btn-primary" id="addField">Add
-                                                    Field</button> -->
-                                                <button type="submit" class="btn btn-primary">Post</button>
+                                                
+                                                <button id="jobSubmit" type="submit" class="btn btn-primary">Post</button>
                                             </div>
                                         </form>
                                     </div>

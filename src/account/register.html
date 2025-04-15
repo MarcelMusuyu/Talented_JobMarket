@@ -49,17 +49,28 @@
 
                          
                             <div class="row">
+                                 <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>User Role:</label>
+                                        <select class="select form-control" required id="user_role" name="type_user">
+                                            <option>Select A Role</option>
+                                            <option  value="candidate">Candidate</option>
+                                            <option value="recruiter">Recruiter</option>
+                                                                  
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12">
                                     <div class="form-group" id="firstname">
                                         <label class="form-control-label">Firstname</label>
-                                        <input id="first-name" type="text" required class="form-control"
-                                            name="first_name" value="" placeholder="Firstname" autofocus="" />
+                                        <input id="firstname" type="text" required class="form-control"
+                                            name="firstname" value="" placeholder="Firstname" autofocus="" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group" id="lastname">
                                         <label  class="form-control-label">Lastname</label>
-                                        <input id="last-name" type="text" placeholder="Lastname" required class="form-control" name="last_name"
+                                        <input id="lastname" type="text" placeholder="Lastname" required class="form-control" name="lastname"
                                             value="" />
                                     </div>
                                 </div>
@@ -73,24 +84,13 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>User Role:</label>
-                                        <select class="select form-control" id="user_role" name="type_user">
-                                            <option>Select A Role</option>
-                                            <option value="Candiate">Candidate</option>
-                                            <option value="Recruiter">Recruiter</option>
-                                                                  
-                                        </select>
-                                    </div>
-                                </div>
                             </div>
                             <div class="row">
                                  <div class="col-lg-12">
                                     <div class="form-group">
 
                                         <label>Photo</label>
-                                        <input class="form-control" type="file" name="profile" id="category_image">
+                                        <input class="form-control" type="file" required name="profile" id="category_image">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -105,7 +105,7 @@
                             <div class="form-group">
                                 <div class="custom-control custom-control-xs custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" required
-                                        name="agreeCheckboxUser" id="agree_checkbox_user" />
+                                         id="agree_checkbox_user" />
                                     <label class="custom-control-label" for="agree_checkbox_user">I agree with
                                        Talented JobMarket</label>
                                     <a tabindex="-1" href="javascript:void(0);">Privacy Policy</a>
@@ -140,11 +140,11 @@
         const lastname = document.getElementById('lastname');
         
         skillSet.addEventListener('change', () => {
-             if(skillSet.value == "Recruiter"){
+             if(skillSet.value == "recruiter"){
                 firstname.innerHTML="";
                 firstname.innerHTML=` <label class="form-control-label">Enterprise Name</label>
-                                        <input id="first-name" type="text" required class="form-control"
-                                            name="first_name" value="" placeholder="Enterprise" autofocus="" />`;
+                                        <input id="firstname" type="text" required class="form-control"
+                                            name="firstname" value="" placeholder="Enterprise" autofocus="" />`;
                 lastname.innerHTML= "";
                 lastname.innerHTML= `
                                         <label>Enterprise Type:</label>
@@ -158,10 +158,10 @@
                                 </div>`;
              }else{
                 firstname.innerHTML = ` <label class="form-control-label">Firstname</label>
-                                        <input id="first-name" type="text" required class="form-control"
-                                            name="first_name" value="" placeholder="Firstname" autofocus="" />`;
+                                        <input id="firstname" type="text" required class="form-control"
+                                            name="firstname" value="" placeholder="Firstname" autofocus="" />`;
                 lastname.innerHTML= `<label  class="form-control-label">Lastname</label>
-                                        <input id="last-name" type="text" placeholder="Lastname" required class="form-control" name="last_name"
+                                        <input id="lastname" type="text" placeholder="Lastname" required class="form-control" name="lastname"
                                             value="" />`;
              }
         }); 

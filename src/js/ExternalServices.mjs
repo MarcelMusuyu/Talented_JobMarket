@@ -2,6 +2,7 @@ const baseURL = import.meta.env.VITE_SERVER_URL
 
  
 function convertToJson(res) {
+  console.log(res);
   if (res.ok) {
     return res.json();
   } else {
@@ -10,7 +11,7 @@ function convertToJson(res) {
 }
 
 
-
+import { getParam } from "./utils.mjs";
 
 export default class ExternalServices {
   constructor() {
@@ -25,18 +26,40 @@ export default class ExternalServices {
       },
       body: JSON.stringify(payload),
     };
-    return await fetch(`${baseURL}user/login/`, options).then(convertToJson);
+    return await fetch(`${baseURL}user/login`, options).then(convertToJson);
   };
   
   async register(payload){
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    };
-    return await fetch(`${baseURL}user/register/`, options).then(convertToJson);
+     const formData = new FormData(payload);
+
+  // // Append text fields to the FormData object
+  // for (const key in payload) {
+  //   if (payload.hasOwnProperty(key) && key !== "file") { // Exclude the file from this loop
+  //     formData.append(key, payload[key]);
+  //   }
+  // }
+
+  // // Append the file to the FormData object
+  // if (payload.file) {
+  //   formData.append("profile", payload.file); // 'file' is the field name the server expects
+  // }
+
+  const options = {
+    method: "POST",
+    body: formData, // Use FormData as the body
+    // Do NOT set Content-Type: 'application/json' - the browser will do it
+  };
+  const result = await fetch(`${baseURL}user/register`, options);
+  let data = null; 
+  if (result) {
+    data = convertToJson(result);
+    console.log(data);  
+    return data;
+  }else{
+    console(result);
+    return null;
+  }
+  
   }
 
   async getJobOpportunies() {
@@ -139,14 +162,44 @@ export default class ExternalServices {
     return data;
   }
 
+
+  async sendApplication(payload){
+     const formData = new FormData(payload);
+
+     const jobOpportunity = getParam("job");
+     formData.append("jobOpportunity",jobOpportunity);
+  // Append text fields to the FormData object
+  // for (const key in payload) {
+  //   if (payload.hasOwnProperty(key) && key !== "file") { // Exclude the file from this loop
+  //     formData.append(key, payload[key]);
+  //   }
+  // }
+
+  // // Append the file to the FormData object
+  // if (payload.file) {
+  //   formData.append("profile", payload.file); // 'file' is the field name the server expects
+  // }
+    const options = {
+      method: "POST",
+      headers: {
+     
+         "Authorization": `Bearer ${localStorage.getItem("token")}`
+      },
+      body: formData,
+    };
+    return await fetch(`${baseURL}applications`, options).then(convertToJson);
+  }
+
   async updateApplication(payload,id){
+     const formData = new FormData(payload);
+
     const options = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
          "Authorization": `Bearer ${localStorage.getItem("token")}`
       },
-      body: JSON.stringify(payload),
+      body: formData,
     };
     return await fetch(`${baseURL}applications/${id}`, options).then(convertToJson);
   }

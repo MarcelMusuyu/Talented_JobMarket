@@ -1,52 +1,52 @@
+
+
+import { getParam, loadHeaderFooter } from "./utils.mjs";
+import ProductData from "./ExternalServices.mjs";
+import ApplicationDetails from "./ApplicationDetails.mjs";
+
+
+loadHeaderFooter();
+const dataSource = new ProductData();
+const applicationtId = getParam("application");
+const application = new ApplicationDetails(applicationtId,dataSource);
+application.init();
 document.addEventListener("DOMContentLoaded", (event) => {
-           
-                document.getElementById("resumeCV").addEventListener("click", function(e) {
+                const documents = ["resumeCV","coverLetter", "transcript"];
+                const urls = application.documentsURL() || ["https://github.com/MarcelMusuyu/Talented_JobMarketAPI/blob/main/src/job_process/Resume.pdf",
+                    "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/coverLetter.pdf",
+                    "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/transcript.pdf"
+                ]
+                let count = 0;
+                if(documents.length == 3 && urls.length == 3){
+                    documents.forEach((file)=>{
+                        document.getElementById(file).addEventListener("click", function(e) {
 
-                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
-                     const canvas1 = document.getElementById("pdf-render1");
-                    
-                    const prev = document.querySelector("#prev-page1");
-                    const next = document.querySelector("#next-page1");
-                    const count = document.querySelector("#page-num1");
-                     
-                    printPDF(url, canvas1, prev, next, count)
-                });
+                        const url = urls[count];
+                        count++;
+                        const canvas = document.getElementById(`pdf-render${count}`);
+                        
+                        const prev = document.querySelector(`#prev-page${count}`);
+                        const next = document.querySelector(`#next-page${count}`);
+                        const counter = document.querySelector(`#page-num1${count}`);
+                        
+                        printPDF(url, canvas, prev, next, counter)
+                    });
+                    });
+            }
+               
 
-                document.getElementById("coverLetter").onload = function () {
-                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
-                     const canvas1 = document.getElementById("pdf-render1");
-                    
-                    const prev = document.querySelector("#prev-page1");
-                    const next = document.querySelector("#next-page1");
-                    const count = document.querySelector("#page-num1");
-                     
-                    printPDF(url, canvas1, prev, next, count)
 
-                 };
-                
-                document.getElementById("transcript").addEventListener("click", function(e) {
+                // document.getElementById("coverLetter").addEventListener("click", function(e) {
 
-                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
-                    const canvas3 = document.getElementById("pdf-render3");
-                     
-                    const prev = document.querySelector("#prev-page3");
-                    const next = document.querySelector("#next-page3");
-                   const count = document.querySelector("#page-num3");
-                     
-                    printPDF(url, canvas3, prev, next, count)
-                });
-
-                document.getElementById("coverLetter").addEventListener("click", function(e) {
-
-                    const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
-                    const canvas4 = document.getElementById("pdf-render4");
+                //     const url = "https://github.com/MarcelMusuyu/Talented_JobMarket/blob/main/src/job_process/Resume.pdf";
+                //     const canvas4 = document.getElementById("pdf-render4");
                  
-                    const prev = document.querySelector("#prev-page4");
-                   const  next = document.querySelector("#next-page4");
-                    const count = document.querySelector("#page-num4");
+                //     const prev = document.querySelector("#prev-page4");
+                //    const  next = document.querySelector("#next-page4");
+                //     const count = document.querySelector("#page-num4");
                       
-                    printPDF(url, canvas4, prev, next, count)
-                });
+                //     printPDF(url, canvas4, prev, next, count)
+                // });
 
             });
 

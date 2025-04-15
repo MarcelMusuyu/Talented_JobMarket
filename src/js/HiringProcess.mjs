@@ -14,7 +14,7 @@ function formDataToJSON(formElement) {
 
   return convertedJSON;
 }
-export default class LoginProcess{
+export default class HiringProcess{
 
 constructor(formElement) {
     this.formElement = formElement ;
@@ -25,20 +25,15 @@ constructor(formElement) {
   }
 
 
-    async login() {
-      const formElement = this.formElement;
-      const credentials = formDataToJSON(formElement);
+    async publish() {
      
-      
     try {
        
-      const response = await services.login(credentials);
+      const response = await services.addJobOpportunity(this.formElement);
     
       if (response) {
-           const receivedToken = response.token;
-            
-          localStorage.setItem("token", receivedToken);
-         document.querySelector("#message").textContent = "Login successful!";
+    
+         document.querySelector("#message").textContent = "Job Publication successful!";
          document.querySelector("#message").setAttribute("class","alert alert-success");
          document.querySelector("#message").style.display = "block";
         setInterval(() => {
@@ -51,7 +46,45 @@ constructor(formElement) {
          // Redirect to the main page after a delay
        
       }else{
-        document.querySelector("#message").textContent = "Invalid credentials!";
+        document.querySelector("#message").textContent = "Invalid Data format!";
+        document.querySelector("#message").setAttribute("class","alert alert-danger");
+        document.querySelector("#message").style.display = "block";
+      }
+     
+      
+    } catch (err) {
+      
+      document.querySelector("#message").textContent = "An error occurred!";
+      document.querySelector("#message").setAttribute("class","alert alert-danger");
+      document.querySelector("#message").style.display = "block";
+    }
+  }
+
+
+   async sendApplication() {
+     
+     
+    try {
+       
+      const response = await services.sendApplication(this.formElement);
+    
+      if (response) {
+          
+         document.querySelector("#message").textContent = "Application creation successful!";
+         document.querySelector("#message").setAttribute("class","alert alert-success");
+         document.querySelector("#message").style.display = "block";
+       
+        
+          setInterval(() => {
+           window.location.href = "index.html";
+        
+         }, 5000);
+        
+        
+         // Redirect to the main page after a delay
+       
+      }else{
+        document.querySelector("#message").textContent = "Invalid data format!";
         document.querySelector("#message").setAttribute("class","alert alert-danger");
         document.querySelector("#message").style.display = "block";
       }
@@ -66,31 +99,28 @@ constructor(formElement) {
   }
 
 
-   async register() {
+  async updateApplication(id) {
       const formElement = this.formElement;
-      const credentials = formDataToJSON(formElement);
-      
       
     try {
        
-      const response = await services.register(credentials);
+      const response = await services.updateApplication(this.formElement,id);
     
       if (response) {
           
-         document.querySelector("#message").textContent = "Register successful!";
+         document.querySelector("#message").textContent = "Application updated successful!";
          document.querySelector("#message").setAttribute("class","alert alert-success");
          document.querySelector("#message").style.display = "block";
         setInterval(() => {
-           document.querySelector("#registerSubmit").textContent = "";
-          document.querySelector("#registerSubmit").textContent = "..."
+           window.location.href = "index.html";
+        
          }, 5000);
         
-          window.location.href = "account/login.html";
-        
+         
          // Redirect to the main page after a delay
        
       }else{
-        document.querySelector("#message").textContent = "Invalid credentials!";
+        document.querySelector("#message").textContent = "Invalid data format!";
         document.querySelector("#message").setAttribute("class","alert alert-danger");
         document.querySelector("#message").style.display = "block";
       }

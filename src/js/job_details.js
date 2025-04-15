@@ -1,16 +1,16 @@
-// import { getParam, loadHeaderFooter } from "./utils.mjs";
-// import ProductData from "./ExternalServices.mjs";
-// import ProductDetails from "./ProductDetails.mjs";
+import { getParam, loadHeaderFooter } from "./utils.mjs";
+import ProductData from "./ExternalServices.mjs";
+import ProductDetails from "./JobDetails.mjs";
 
 
-// loadHeaderFooter();
-// const dataSource = new ProductData();
-// const productId = getParam("product");
+loadHeaderFooter();
+const dataSource = new ProductData();
+const productId = getParam("job");
 
-// const product = new ProductDetails(productId, dataSource);
+const product = new ProductDetails(productId, dataSource);
 
 
-// product.init();
+product.init();
 
 
 // function addProductToCart(products) {
