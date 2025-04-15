@@ -1,11 +1,15 @@
-import { getParam, loadHeaderFooter } from "./utils.mjs";
+import { getParam,  loadHeaderFooter } from "./utils.mjs";
 import ProductData from "./ExternalServices.mjs";
 import ProductDetails from "./JobDetails.mjs";
 
 
+
 loadHeaderFooter();
+
 const dataSource = new ProductData();
 const productId = getParam("job");
+
+console.log(productId);
 
 const product = new ProductDetails(productId, dataSource);
 

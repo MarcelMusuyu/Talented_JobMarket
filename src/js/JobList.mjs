@@ -1,22 +1,23 @@
 
 function productCardTemplate(job,index) {
-  return 
+   const stringCard =
       `<div class="col-12 col-md-4 col-lg-3">
-                                <div class="large-col">
-                                    <a href="/job_process/job_detail.html/job=?${job.Id}" class="large-col-image">
-                                        <div class="image-col-merge">
-                                            <img src="/assets/img/path-img${index}.jpg" alt="" />
-                                            <div class="text-col">
-                                                <h5>${job.title}</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>`
-    
+            <div class="large-col">
+                <a href="/job_process/details/?job=${job._id}" class="large-col-image">
+                    <div class="image-col-merge">
+                        <img src="/assets/img/path-img${index}.jpg" alt="" />
+                            <div class="text-col">
+                                <h5>${job.title}</h5>
+                             </div>
+                    </div>
+                 </a>
+            </div>
+        </div>`;
+
+
+    return stringCard;
 };
 
-import { renderListWithTemplate } from "./utils.mjs";
 
 export default class JobList {
 
@@ -31,6 +32,7 @@ export default class JobList {
     try {
         
        const list = await this.dataSource.getJobOpportunies();
+      
          this.renderList(list);
     } catch (error) {
        //console.error(error);
@@ -42,26 +44,18 @@ export default class JobList {
 
         if (list && list.length > 0) {
            let index = 1;
+           let card = ""
             list.forEach((job) => {
-                renderListWithTemplate(productCardTemplate(job,index), this.listElement, "afterbegin", true);
+             
+                card += productCardTemplate(job,index);
                 index++;
                 
             });
-          
+          this.listElement.innerHTML = card;
         } else {
             this.listElement.innerHTML = "<p>No job found.</p>";
         }
        
     }
-
-
-      post_Job(job){
-
-      }
-
-    
-
-
-  
 
 }

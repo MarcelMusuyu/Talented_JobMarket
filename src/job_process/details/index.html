@@ -22,7 +22,7 @@
       <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
 
       <link rel="stylesheet" href="/assets/css/style.css" />
-     
+      <script src="/js/main.js" type="module"></script>  
       <script src="/js/job_details.js" type="module"></script>  
   
   </head>
@@ -61,7 +61,7 @@
                                             <img src="/images/logos/logo.jpg"   class="img-fluid" alt="Logo" />
                                             </a>
                                         </div>
-                                        <h3 class="blog-title" id="company-recruiter">Talented JobMarket</h3>
+                                        <h3 class="blog-title">Talented JobMarket</h3>
                                         <div class="blog-info clearfix">
                                             <div class="post-left">
                                                 <ul>
@@ -72,7 +72,9 @@
                                                         </div>
                                                     </li>
                                                     <li><i id="fa-calendar" class="far fa-calendar"></i>
-                                                        
+                                                        <script>
+                                                        document.getElementById("fa-calendar").innerHTML = new Date().now
+                                                        </script>
                                                     </li>
                                                     <li><i class="far fa-comments"></i>12 Comments</li>
                                                     <li><i class="fa fa-tags"></i>HTML</li>
@@ -90,7 +92,7 @@
 
                                             <h4><strong class="text-info">Responsibilities</strong></h4><br>
                                         
-                                                <div id="Responsibilities"></div>
+                                         <em id="Responsibilities"></em>
                                         
                                             </p>
 
@@ -101,7 +103,7 @@
 
                                             <p>
                                             <h4><strong class="text-info">Skills</strong></h4><br>
-                                               <div id="Skills"></div>
+                                                🛠  <em id="Skills"></em>
                                             
                                             </p>
 

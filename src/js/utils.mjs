@@ -30,9 +30,10 @@ export function getParam(param) {
   return product;
 }
 
-export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false){
+export function renderListWithTemplate(templateFn, parentElement, position = "afterbegin", clear = false){
     if(clear) parentElement.innerHTML = "";
-    parentElement.insertAdjacentHTML(position, list.map(templateFn).join(""));
+    // parentElement.insertAdjacentHTML(position, list.map(templateFn).join(""));
+    parentElement.insertAdjacentHTML(templateFn, position);
 }
 
 export function renderWithTemplate(template, parentElement, data, callback){

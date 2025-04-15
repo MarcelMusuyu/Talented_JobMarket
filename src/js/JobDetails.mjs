@@ -12,7 +12,7 @@ export default class JobDetails {
     try {
       // Use the datasource to get the details for the current product.
       // findProductById will return a promise! use await or .then() to process it
-      this.job = await this.dataSource.getJobOpportunityById(this.jobIdId);
+      this.job = await this.dataSource.getJobOpportunityById(this.jobId);
 
      
       // The product details are needed before rendering the HTML
@@ -37,20 +37,36 @@ export default class JobDetails {
 
         
         // Populate the cloned template with product data
-        document.querySelector("#recruiter").textContent = this.job.enterprise;
-        document.querySelector("#status").textContent = this.job.status;
+        document.querySelector("#recruiter").textContent = this.job.title;
+        document.querySelector("#description").textContent = this.job.description;
+       
+        // document.querySelector("#Skills").textContent = this.job.requirements.join("");
+        let list = "";
+        this.job.requirements.forEach((skill) => {
+           
+           
+            list += ` 🛠<span class=""> ${skill} </span> <br>`;
+           
+        });
+         document.querySelector("#Skills").innerHTML = list;
+          document.querySelector("#Responsibilities").innerHTML = this.job.responsibilities.join("<br>");
+        
+        document.querySelector("#status").innerHTML = this.job.status;
         document.querySelector("#location").textContent = this.job.location;
         document.querySelector("#contract").textContent = this.job.location;
         document.querySelector("#job_title").textContent = this.job.title ;
         document.querySelector("#experience").textContent = this.job.experience;
-        document.querySelector("#requirements").innerHTML = this.job.skills.join("");
+        
+       document.querySelector(".blog-title").textContent = this.job.recruiter.enterprise;
         document.querySelector("#apply").dataset.id = this.job.Id;
-        document.querySelector("#apply").setAttribute("href",`/job_process/send_application.html?job=${this.job.Id}`)
-        document.querySelector("#responsibilities").innerHTML = this.job.responsibilities.join("");
-        document.querySelector("#description").innerHTML = this.job.description;
+        document.querySelector("#apply").setAttribute("href",`/job_process/send_application.html?job=${this.job._id}`)
+       document.querySelector("#fa-calendar").textContent = this.job.contract;
+        document.querySelector("#description").textContent = this.job.description;
+       
+        
         document.querySelector("#education").innerHTML = this.job.education;
           document.querySelector("#salary").innerHTML = this.job.salary;
-            document.querySelector("#closingDate").innerHTML = this.job.clossingDate;
+            document.querySelector("#closingDate").innerHTML = this.job.closingDate;
 
         
 }
