@@ -4,8 +4,12 @@ import  LoginProcess  from "./LoginProcess.mjs";
 
  loadHeaderFooter();
 
+ 
 
 const formElement = document.querySelector("#loginForm");
+
+
+
 if(formElement){
   const logProcess = new LoginProcess(formElement);
   const loginButton = document.querySelector("#loginSubmit");
@@ -29,7 +33,5 @@ if(formElement){
     }
   }
 
- 
-
-
+  
  

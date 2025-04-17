@@ -3,7 +3,7 @@ function productCardTemplate(job,index) {
    const stringCard =
       `<div class="col-12 col-md-4 col-lg-3">
             <div class="large-col">
-                <a href="/job_process/details/?job=${job._id}" class="large-col-image">
+                <a href="/job_process/job_detail?job=${job._id}" class="large-col-image">
                     <div class="image-col-merge">
                         <img src="/assets/img/path-img${index}.jpg" alt="" />
                             <div class="text-col">

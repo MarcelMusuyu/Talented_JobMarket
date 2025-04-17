@@ -9,7 +9,21 @@ function convertToJson(res) {
     throw new Error("Bad Response");
   }
 }
+const loadingIndicator = document.getElementById("loading");
+function showLoading() {
+            if(loadingIndicator){
+               loadingIndicator.style.display = "flex";
+              document.querySelector("#registerSubmit").disabled = true;
+            }
+           
+  }
 
+  function hideLoading() {
+        if(loadingIndicator){
+            loadingIndicator.style.display = "none";
+            document.querySelector("#registerSubmit").disabled = false;
+        }
+    }
 
 import { getParam } from "./utils.mjs";
 
@@ -30,35 +44,26 @@ export default class ExternalServices {
   };
   
   async register(payload){
-     const formData = new FormData(payload);
+    //  const formData = new FormData(payload);
+   const formData = new FormData(payload);
+  const profileInput = document.querySelector(`input[type="file"][name="profile"]`);
+   const profileFile = profileInput.files[0];
 
-  // // Append text fields to the FormData object
-  // for (const key in payload) {
-  //   if (payload.hasOwnProperty(key) && key !== "file") { // Exclude the file from this loop
-  //     formData.append(key, payload[key]);
-  //   }
-  // }
+  formData.delete("profile");  // Remove the empty profile
+  formData.append("profile", profileFile); // Append the actual file
 
-  // // Append the file to the FormData object
-  // if (payload.file) {
-  //   formData.append("profile", payload.file); // 'file' is the field name the server expects
-  // }
-
-  const options = {
-    method: "POST",
-    body: formData, // Use FormData as the body
-    // Do NOT set Content-Type: 'application/json' - the browser will do it
-  };
-  const result = await fetch(`${baseURL}user/register`, options);
-  let data = null; 
-  if (result) {
-    data = convertToJson(result);
-    console.log(data);  
-    return data;
-  }else{
-    console(result);
-    return null;
+     showLoading();      
+    try {
+    const response = await fetch(`${baseURL}user/register`, {
+      method: 'POST',
+      body: formData,
+    });
+    return response; // Return the Response object
+  } catch (error) {
+    hideLoading();
+    throw error; // Re-throw the error to be caught in the component
   }
+  
   
   }
 
@@ -177,7 +182,7 @@ export default class ExternalServices {
 
   // // Append the file to the FormData object
   // if (payload.file) {
-  //   formData.append("profile", payload.file); // 'file' is the field name the server expects
+  //   formData.append("profile", payload.file); // "file" is the field name the server expects
   // }
     const options = {
       method: "POST",
