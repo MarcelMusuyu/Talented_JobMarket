@@ -18,6 +18,7 @@ if(jobFormElement){
   const sendButton = document.querySelector("#jobSubmit");
   if(sendButton){
     sendButton.addEventListener("click", (e) => {
+      
       e.preventDefault();
         process.publish();
     });

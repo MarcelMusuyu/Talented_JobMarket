@@ -2,7 +2,7 @@ const baseURL = import.meta.env.VITE_SERVER_URL
 
  
 function convertToJson(res) {
-  console.log(res);
+  
   if (res.ok) {
     return res.json();
   } else {
@@ -25,7 +25,7 @@ function showLoading() {
         }
     }
 
-import { getParam } from "./utils.mjs";
+
 
 export default class ExternalServices {
   constructor() {
@@ -33,6 +33,7 @@ export default class ExternalServices {
   }
 
   async login(payload){
+    showLoading();  
     const options = {
       method: "POST",
       headers: {
@@ -55,7 +56,7 @@ export default class ExternalServices {
      showLoading();      
     try {
     const response = await fetch(`${baseURL}user/register`, {
-      method: 'POST',
+      method: "POST",
       body: formData,
     });
     return response; // Return the Response object
@@ -107,6 +108,7 @@ export default class ExternalServices {
   }
 
   async addJobOpportunity(payload){
+    // showLoading();  
     const options = {
       method: "POST",
       headers: {
@@ -169,28 +171,15 @@ export default class ExternalServices {
 
 
   async sendApplication(payload){
-     const formData = new FormData(payload);
-
-     const jobOpportunity = getParam("job");
-     formData.append("jobOpportunity",jobOpportunity);
-  // Append text fields to the FormData object
-  // for (const key in payload) {
-  //   if (payload.hasOwnProperty(key) && key !== "file") { // Exclude the file from this loop
-  //     formData.append(key, payload[key]);
-  //   }
-  // }
-
-  // // Append the file to the FormData object
-  // if (payload.file) {
-  //   formData.append("profile", payload.file); // "file" is the field name the server expects
-  // }
+  
+  
     const options = {
       method: "POST",
       headers: {
      
          "Authorization": `Bearer ${localStorage.getItem("token")}`
       },
-      body: formData,
+      body: payload,
     };
     return await fetch(`${baseURL}applications`, options).then(convertToJson);
   }

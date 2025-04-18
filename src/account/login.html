@@ -23,7 +23,38 @@
 
       <link rel="stylesheet" href="/assets/assets_admin/css/style.css" />
    
-  
+    <style>
+     .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    #loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
   </head>
   <body>
     
@@ -77,6 +108,10 @@
 
                             <div class="text-center dont-have">Don’t have an account? <a
                                     href="/account/register.html">Register</a></div>
+
+                            <div id="loading">
+                              <div class="spinner"></div>
+                           </div>
                         </div>
                     </div>
                 </div>

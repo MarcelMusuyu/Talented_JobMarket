@@ -24,6 +24,38 @@
       <link rel="stylesheet" href="/assets/css/style.css" />
     <script src="/js/main.js" type="module"></script>
   
+    <style>
+     .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    #loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 10%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
   </head>
   <body>
       <header class="divider" id="main-header">
@@ -134,8 +166,16 @@
                                         <form action="" id="jobForm" method="post">
                                           
                                             <div class="row">
+                                               
                                                 <div class="col-md-6">
                                                     <h4 class="card-title"> Job Position Details</h4>
+                                                     
+                                                    <div class="form-group">
+                                                        <label>Recruiter ID:</label>
+        
+								                        <input type="text"  name="recruiter" class="form-control">
+                                                    </div>
+                                                 
                                                     <div class="form-group">
                                                         <label>Job Position:</label>
                                                         <input type="text" class="form-control" name="title">
@@ -169,7 +209,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Closed Date :</label>
-                                                                <input type="date" name="closed date"
+                                                                <input type="date" 
                                                                     class="form-control" name="closingDate">
                                                             </div>
                                                         </div>
@@ -200,7 +240,7 @@
                                                             <div class="form-group">
                                                                 <label>Experience:</label>
                                                                 <input type="text" name="experience" class="form-control">
-								                                <input type="text" hidden name="recruiter" class="form-control">
+								                                
                                                             </div>
                                                         </div>
 							                            <div class="col-md-6">
@@ -217,6 +257,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
+                                                        
                                                         <div class="form-group">
                                                             <label>Education:</label>
                                                             <textarea rows="2" cols="5" class="form-control"
@@ -238,6 +279,9 @@
                                                 <button id="jobSubmit" type="submit" class="btn btn-primary">Post</button>
                                             </div>
                                         </form>
+                                         <div id="loading">
+                                            <div class="spinner"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
