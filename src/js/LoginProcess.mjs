@@ -109,8 +109,7 @@ constructor(formElement) {
             throw new Error(errorData.message || "Registration failed");
           }
           const data = await response.json();
-          console.log("Registration successful:", data);
-          alert("Registration successful! Check console for user data");
+         
           formElement.reset();
           //router.push("/login"); // Use vue router
           window.location.href = "/account/login.html"

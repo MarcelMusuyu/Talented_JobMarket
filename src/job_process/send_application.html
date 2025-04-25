@@ -467,32 +467,32 @@
 
        
 
-        let form = document.querySelector('#application')
-        form.email.addEventListener('input', function() {
+        // let form = document.querySelector('#application')
+        // form.email.addEventListener('input', function() {
 
-            validEmail(this);
-        });
-
-
+        //     validEmail(this);
+        // });
 
 
-        const validEmail = function(inputMail) {
-            let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
-            let testEmail = emailRegExp.test(inputMail.value);
-            let small = document.querySelector('#valideEmail');
-            if (testEmail) {
 
-                small.innerHTML = 'Adresse Valide';
-                small.classList.remove('text-danger');
-                small.classList.add('text-success');
-                return true;
-            } else {
-                small.innerHTML = 'Adresse Non Valide';
-                small.classList.remove('text-success');
-                small.classList.add('text-danger');
-                return false;
-            }
-        };
+
+        // const validEmail = function(inputMail) {
+        //     let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
+        //     let testEmail = emailRegExp.test(inputMail.value);
+        //     let small = document.querySelector('#valideEmail');
+        //     if (testEmail) {
+
+        //         small.innerHTML = 'Adresse Valide';
+        //         small.classList.remove('text-danger');
+        //         small.classList.add('text-success');
+        //         return true;
+        //     } else {
+        //         small.innerHTML = 'Adresse Non Valide';
+        //         small.classList.remove('text-success');
+        //         small.classList.add('text-danger');
+        //         return false;
+        //     }
+        // };
 /* 
         // $("#subvention").submit(function(e) {
         //     e.preventDefault();

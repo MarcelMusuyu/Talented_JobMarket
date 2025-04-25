@@ -96,46 +96,46 @@ constructor(formElement) {
 
 
    async sendApplication() {
-     
-       const formData = new FormData();
+      
     
   const jobOpportunity = getParam("job");
-     formData.append("jobOpportunity",jobOpportunity);     
+         
   const resumeInput = document.querySelector(`input[type="file"][name="resume"]`);
-   const resumeFile = resumeInput.files[0];
+   const resume = resumeInput.files[0];
 
-  formData.delete("resume");  // Remove the empty profile
-  formData.append("resume", resumeFile); // Append the actual file
 
   const coverInput = document.querySelector(`input[type="file"][name="coverLetter"]`);
-   const coverFile = coverInput.files[0];
+   const coverLetter = coverInput.files[0];
 
-  formData.delete("coverLetter");  
-  formData.append("coverLetter", coverFile); 
+  const email = document.querySelector(`input[type="email"][name="email"]`).value;
 
   const trascriptInput = document.querySelector(`input[type="file"][name="transcript"]`);
-   const trascriptFile = trascriptInput.files[0];
+   const transcript = trascriptInput.files[0];
 
-  formData.delete("transcript");  
-  formData.append("transcript", trascriptFile); 
+  
 
   const languagesText = document.querySelector("textarea[name=\"language\"]").value;
   const skillsText = document.querySelector("textarea[name=\"skill\"]").value;
  
-
+ 
   // 1. Split textarea values into arrays
   const languages = languagesText.split(",").map(item => item.trim()).filter(item => item);
-  const skills = skillsText.split(",").map(item => item.trim()).filter(item => item);
-  formData.delete("skills");
-  formData.append("skills",skills);
   
-  formData.delete("languages");
-  formData.append("languages",languages);
+  const skills = skillsText.split(",").map(item => item.trim()).filter(item => item);
+  
+  const application = {
+    jobOpportunity,
+    resume,
+    coverLetter,
+    transcript,
+    skills,
+    languages,
+    email
+  } 
  
-     
     try {
        
-      const response = await services.sendApplication(formData);
+      const response = await services.sendApplication(application);
     
       if (response) {
           

@@ -172,7 +172,6 @@ export default class ExternalServices {
 
   async sendApplication(payload){
   
-  
     const options = {
       method: "POST",
       headers: {
