@@ -6,6 +6,9 @@ import HiringProcess from "./HiringProcess.mjs";
 import {  loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
+// document.addEventListener("DOMContentLoaded", () => {
+  
+// });
 const dataSource = new ProductData();
 
 const info = new Alert("../json/alert.json", "main");

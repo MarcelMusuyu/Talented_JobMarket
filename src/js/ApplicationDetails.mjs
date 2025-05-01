@@ -4,6 +4,7 @@ export default class ApplicationDetails {
   constructor(applicationId, dataSource) {
     this.applicationId = applicationId;
     this.application = {};
+    this.documentsURL = [];
     this.dataSource = dataSource;
   }
 
@@ -17,6 +18,7 @@ export default class ApplicationDetails {
      
       // The product details are needed before rendering the HTML
       this.renderApplicationDetails();
+      this.documentsURL();
 
       // Once the HTML is rendered, add a listener to the Add to Cart button
       // Notice the .bind(this). This callback will not work if the bind(this) is missing.
@@ -37,20 +39,30 @@ export default class ApplicationDetails {
 
         
         // Populate the cloned template with product data
-        document.querySelector("#skills").textContent = this.application.skills.join("");
+        document.querySelector("#skills").innerHTML = this.application.skills.join("<br>");
         document.querySelector("#status").textContent = this.application.status;
-        document.querySelector("#languages").textContent = this.application.languages.join("");
-        document.querySelector(".firstname").textContent = this.application.firstname;
-        document.querySelector(".email").textContent = this.application.email;
-        document.querySelector("#profile").setAttributes("src",this.application.profile);
-        document.querySelector("#profile").setAttributes("alt","candidate profile");
+        document.querySelector("#languages").innerHTML = this.application.languages.join("<br>");
+         //document.querySelector(".firstname").textContent = this.application.firstname;
+         //document.querySelector(".email").textContent = this.application.email;
+         //document.querySelector("#profile").setAttributes("src",this.application.profile);
+         //document.querySelector("#profile").setAttributes("alt","candidate profile");
         document.querySelector("#appliedDate").innerHTML = this.application.appliedDate;
 
         
 }
 
-documentsURL(){
-  return [this.application.resume,this.application.coverLetter,this.application.transcript]
+getdocumentsURL(){
+ // Check if the documents exist before trying to add them
+  if (this.application.resume) {
+    this.documentsURL.push(this.application.resume);
+  }
+  if (this.application.coverLetter) {
+    this.documentsURL.push(this.application.coverLetter);
+  }
+  if (this.application.transcript) {
+    this.documentsURL.push(this.application.transcript);
+  }
+  return this.documentsURL;
 }
 
 

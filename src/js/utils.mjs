@@ -38,6 +38,7 @@ export function renderListWithTemplate(templateFn, parentElement, position = "af
 
 export function renderWithTemplate(template, parentElement, data, callback){
     if(template && parentElement){
+   
       parentElement.innerHTML = template;
     }
    
@@ -65,10 +66,20 @@ export async function loadHeaderFooter(){
   const footerElement = document.querySelector("#main-footer");
 
   
-  
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
 
+       const filterHeader = document.querySelector("#recruiter-menu");
+   
+    if(filterHeader){
+      const user = JSON.parse(localStorage.getItem("user"));
+     
+      if (user && user.role === "recruiter") {
+        filterHeader.style.display = "block";
+      }else{
+        filterHeader.style.display = "none";
+      }
+    }
     
     
 }

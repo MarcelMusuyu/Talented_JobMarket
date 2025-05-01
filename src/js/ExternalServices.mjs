@@ -13,7 +13,7 @@ const loadingIndicator = document.getElementById("loading");
 function showLoading() {
             if(loadingIndicator){
                loadingIndicator.style.display = "flex";
-              document.querySelector("#registerSubmit").disabled = true;
+              // document.querySelector("#registerSubmit").disabled = true;
             }
            
   }
@@ -21,7 +21,7 @@ function showLoading() {
   function hideLoading() {
         if(loadingIndicator){
             loadingIndicator.style.display = "none";
-            document.querySelector("#registerSubmit").disabled = false;
+            // document.querySelector("#registerSubmit").disabled = false;
         }
     }
 
