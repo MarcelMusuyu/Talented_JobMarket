@@ -97,22 +97,21 @@ constructor(formElement) {
 
    async sendApplication() {
       
-  const formData = new FormData();
-  
+  const   formData = new FormData();
   const jobOpportunity = getParam("job");
-  formData.append("jobOpportunity",jobOpportunity);       
+         
   const resumeInput = document.querySelector(`input[type="file"][name="resume"]`);
    const resume = resumeInput.files[0];
-	
-  formData.append("resume",resume);
+
+
   const coverInput = document.querySelector(`input[type="file"][name="coverLetter"]`);
    const coverLetter = coverInput.files[0];
-  formData.append("coverLetter",coverLetter);
+
   const email = document.querySelector(`input[type="email"][name="email"]`).value;
 
   const trascriptInput = document.querySelector(`input[type="file"][name="transcript"]`);
    const transcript = trascriptInput.files[0];
-  formData.append("transcript",transcript);
+
   
 
   const languagesText = document.querySelector("textarea[name=\"language\"]").value;
@@ -123,15 +122,28 @@ constructor(formElement) {
   const languages = languagesText.split(",").map(item => item.trim()).filter(item => item);
   
   const skills = skillsText.split(",").map(item => item.trim()).filter(item => item);
-  skills.forEach(value => {
+ formData.append("jobOpportunity", jobOpportunity);
+  formData.append("resume", resume); 
+  formData.append("coverLetter", coverLetter);
+  formData.append("transcript", transcript); 
+skills.forEach(value => {
   formData.append("skills[]", value); // Note the "[]"
 });
 
-   
-  languages.forEach(value => {
+languages.forEach(value => {
   formData.append("languages[]", value); // Note the "[]"
 });
-  formData.append("email",email);
+
+  formData.append("email", email);
+  // const application = {
+  //   jobOpportunity,
+  //   resume,
+  //   coverLetter,
+  //   transcript,
+  //   skills,
+  //   languages,
+  //   email
+  // } 
  
     try {
        
