@@ -76,12 +76,16 @@ export default class ApplicationList {
                  `<tr>
                      <td>
                         <h2 class="table-avatar">
-                            <a href="/job_process/application_details.html?application=${item._id}" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${item.profile}" alt="User Image" /></a>
-                            <a href="/job_process/application_details.html?application=${item._id}">${item.firstname} <span>${item.email}</span></a>
+                            <a href="/job_process/application_details.html?application=${item._id}" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${item.applicant.profile}" alt="User Image" /></a>
+    
                         </h2>
                      </td>
+                     <td> ${item.applicant.firstname} <br><span>${item.applicant.email}</span></td>
+                     <td>
+                        <a class="icon-col" href="/job_process/application_details.html?application=${item._id}">${item.jobOpportunity.title}</a>
+                     </td>
                      <td>${item.appliedDate}</td>
-                    <td class="text-center"><span class="accept">${item.status}</span></td>
+                    <td class="text-center"><span class="pending">${item.status}</span></td>
                         <td class="text-center">
                             <a href="/job_process/application_details.html?application=${item._id}" class="btn btn-sm bg-info-light"><i class="far fa-eye"></i> View</a>
                     </td>

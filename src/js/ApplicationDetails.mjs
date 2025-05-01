@@ -42,10 +42,10 @@ export default class ApplicationDetails {
         document.querySelector("#skills").innerHTML = this.application.skills.join("<br>");
         document.querySelector("#status").textContent = this.application.status;
         document.querySelector("#languages").innerHTML = this.application.languages.join("<br>");
-         //document.querySelector(".firstname").textContent = this.application.firstname;
-         //document.querySelector(".email").textContent = this.application.email;
-         //document.querySelector("#profile").setAttributes("src",this.application.profile);
-         //document.querySelector("#profile").setAttributes("alt","candidate profile");
+         document.querySelector(".firstname").textContent = this.application.applicant.firstname;
+         document.querySelector(".email").textContent = this.application.applicant.email;
+         document.querySelector("#profile").setAttributes("src",this.application.applicant.profile);
+         document.querySelector("#profile").setAttributes("alt","candidate profile");
         document.querySelector("#appliedDate").innerHTML = this.application.appliedDate;
 
         
